@@ -7,4 +7,5 @@ build:
   before_script:
     -  docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
-    - docker build --tag $CI_PROJECT_PATH:latest .
+    - docker build --tag $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
