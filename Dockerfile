@@ -19,7 +19,7 @@ RUN wget https://download.samba.org/pub/samba/rc/samba-$SMBVERSION.tar.gz \
  && tar xf samba-$SMBVERSION.tar.gz \
  && cd samba-$SMBVERSION \
  && ./configure \
- && make -j (`nproc` || 1) \
+ && make -j `nproc || echo 1` \
  && make install \
  && cd .. \
  && rm -rf samba-$SMBVERSION
