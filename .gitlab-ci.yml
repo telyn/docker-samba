@@ -5,7 +5,8 @@ build:
   stage: build
   tags:
     - docker-build
+  before_script:
+    -  docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - docker build --tag $CI_PROJECT_PATH:latest .
-  after_script:
     - docker push $CI_PROJECT_PATH:latest $CI_REGISTRY_IMAGE
