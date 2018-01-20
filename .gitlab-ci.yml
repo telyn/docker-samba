@@ -1,0 +1,11 @@
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - docker-build
+  script:
+    - docker build --tag $CI_PROJECT_PATH:latest .
+  after_script:
+    - docker push $CI_PROJECT_PATH:latest $CI_REGISTRY_IMAGE
