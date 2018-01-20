@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 echo "$USERS" | while read line; do
 	USERNAME="${line##*:}"
