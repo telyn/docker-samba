@@ -24,9 +24,6 @@ RUN wget https://download.samba.org/pub/samba/rc/samba-$SMBVERSION.tar.gz \
  && cd .. \
  && rm -rf samba-$SMBVERSION
 
-VOLUME /etc/passwd
-VOLUME /usr/local/samba/private
-
 COPY startup.sh /startup.sh
 
 CMD ["/startup.sh"]
