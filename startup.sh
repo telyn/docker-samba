@@ -1,9 +1,8 @@
 #!/bin/bash
-set -x
 
 echo "$USERS" | while read line; do
-	USERNAME="${line##*:}"
-	PASSWORD="${line%%:*}"
+	USERNAME="${line%%:*}"
+	PASSWORD="${line##*:}"
 	useradd "$USERNAME"
 	echo "$PASSWORD" | smbpasswd -a "$USERNAME"
 done
