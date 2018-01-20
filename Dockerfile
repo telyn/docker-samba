@@ -23,3 +23,6 @@ RUN wget https://download.samba.org/pub/samba/rc/samba-$SMBVERSION.tar.gz \
  && make install \
  && cd .. \
  && rm -rf samba-$SMBVERSION
+
+VOLUME /etc/passwd
+VOLUME /usr/local/samba/private
