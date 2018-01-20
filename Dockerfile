@@ -15,11 +15,11 @@ RUN apt-get -y update && apt-get -y install \
     libldap2-dev \
     libpam0g-dev 
 
-RUN wget https://download.samba.org/pub/samba/rc/samba-$VERSION.tar.gz \
- && tar xf samba-$VERSION.tar.gz \
- && cd samba-$VERSION \
+RUN wget https://download.samba.org/pub/samba/rc/samba-$SMBVERSION.tar.gz \
+ && tar xf samba-$SMBVERSION.tar.gz \
+ && cd samba-$SMBVERSION \
  && ./configure \
  && make \
  && make install \
  && cd .. \
- && rm -rf samba-$VERSION
+ && rm -rf samba-$SMBVERSION
