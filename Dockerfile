@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 ENV SMBVERSION=4.8.0rc1
-ENV PATH=/usr/local/samba/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV PATH=/usr/local/samba/sbin:/usr/local/samba/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 RUN apt-get -y update && apt-get -y install \
     build-essential \
