@@ -8,4 +8,3 @@ build:
     -  docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - docker build --tag $CI_PROJECT_PATH:latest .
-    - docker push $CI_PROJECT_PATH:latest $CI_REGISTRY_IMAGE
